@@ -1,7 +1,6 @@
 const state = {
 	isHidden: true,
 	hamburgerButton: null,
-	buttonContainer: null,
 	project1Button: null,
 	project2Button: null,
 	projectItem1: null,
@@ -16,7 +15,6 @@ const state = {
 };
 const updateState = () => {
 	state.hamburgerButton = document.getElementById("hamburger");
-	state.buttonContainer = document.getElementById("button-container");
 	state.project1Button = document.getElementById("project-1");
 	state.project2Button = document.getElementById("project-2");
 	state.projectItem1 = document.getElementById('project-item-1');
@@ -32,7 +30,7 @@ const updateState = () => {
 const smoothScrollToAnchor = () => {
 	const links = document.querySelectorAll('a[href^="#"]');
 	links.forEach(link => {
-		link.addEventListener('click', function (e) {
+		link.addEventListener('click', (e) => {
 			e.preventDefault();
 			const href = this.getAttribute('href');
 			const target = document.querySelector(href);
@@ -119,9 +117,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const intersectionOptions = {
-	root: document.body,
+	root: null,
 	rootMargin: "0px",
-	threshold: 1.0,
+	threshold: 0.5,
 };
 
 const animateProjectsIn = () => {
@@ -131,32 +129,27 @@ const animateProjectsIn = () => {
 	state.secondImage1.classList.remove('fade-in');
 	state.projectItem2.style.display = 'none';
 	state.projectItem1.style.display = 'flex';
-	state.buttonContainer.classList.remove('grow');
+	state.project1Button.classList.remove('button-inverse');
 	setTimeout(() => {
 		state.firstImage1.classList.add('fade-in');
 		state.secondImage1.classList.add('fade-in');
-		state.project1Button.classList.remove('button-inverse');
-		state.buttonContainer.classList.add('grow');
-	}, 2000);
+	}, 1000);
 }
 
 callback = (entries, observer) => {
-	entries.forEach(() => {
-		animateProjectsIn();
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			animateProjectsIn();
+			observer.unobserve(entry.target);
+		}
 	});
 };
 
-let observer = new IntersectionObserver(callback);
+let observer = new IntersectionObserver(callback, intersectionOptions);
 const projects = document.getElementById("projects");
 observer.observe(projects);
 
 
-document.getElementById('form').addEventListener('submit', function (e) {
+document.getElementById('form').addEventListener('submit', (e) => {
 	e.preventDefault();
-	console.log("submitted");
 });
-
-
-
-
-

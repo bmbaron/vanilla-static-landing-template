@@ -68,22 +68,17 @@ section > h2:first-of-type {
     text-decoration: none;
 }
 
-.grow {
-    animation: grow 1s;
-    animation-delay: 2s;
-}
-
 
 /* ===== NAVBAR ===== */
 
 /* TODO: Add final banner background image, commented out rule below has with filter */
 header {
-    background-size: cover;
     /*background: linear-gradient(*/
     /*        rgba(0, 0, 0, 0.6),*/
     /*        rgba(0, 0, 0, 0.6)*/
     /*), url("../images/banner.webp") no-repeat 40% 0;*/
-    background: url("../images/banner.webp") no-repeat 40%;
+    background: url("../images/banner.webp") no-repeat;
+    background-size: cover;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -1163,17 +1158,5 @@ footer {
     }
     100% {
         transform: translate(1px, -2px) rotate(-1deg);
-    }
-}
-
-@keyframes grow {
-    0% {
-        transform: unset;
-    }
-    50% {
-        transform: scale(1.7);
-    }
-    100% {
-        transform: unset;
     }
 }
