@@ -1,0 +1,180 @@
+.hero {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 60px;
+    color: white;
+    margin: auto;
+    position: absolute;
+    top: 27%;
+}
+
+.hero h1 {
+    font-size: 80px;
+    line-height: 90px;
+    width: 800px;
+    margin: auto auto 30px;
+    font-weight: 300;
+    font-family: var(--title-ff);
+    color: white;
+}
+
+.hero p {
+    font-size: 20px;
+    font-weight: 300;
+    width: 600px;
+    margin: auto;
+}
+
+.hero .hero-button {
+    width: 300px;
+    height: 80px;
+    margin: auto;
+    margin-top: 60px;
+    color: white;
+    display: flex;
+    background: #cf231d;
+    justify-content: space-between;
+    outline: 2px solid #cf231d;
+}
+
+.hero .hero-button p {
+    height: 80px;
+    width: 220px;
+    line-height: 80px;
+    margin: 0;
+}
+
+.hero .hero-button .icon-wrapper {
+    background: white;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+}
+
+.hero .hero-button .phone-icon {
+    color: #cf231d;
+    font-size: 20px;
+}
+
+.hero .hero-button:hover {
+    opacity: 0.8;
+}
+
+.hero .hero-button:hover .phone-icon {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+.hero:hover a {
+    text-decoration: none !important;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    .hero h1 {
+        font-size: 60px;
+        width: 600px;
+        line-height: 70px;
+    }
+
+    .hero p {
+        width: 450px;
+    }
+
+    .hero .hero-button {
+        width: 300px;
+        height: 80px;
+        margin: auto;
+        margin-top: 60px;
+        color: white;
+        display: flex;
+        background: #cf231d;
+        justify-content: space-between;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .hero {
+        top: 20%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+        width: 380px;
+        line-height: 45px;
+    }
+
+    .hero p {
+        width: 280px;
+    }
+
+    .hero .hero-button {
+        width: 200px;
+        height: 50px;
+        margin: auto;
+        margin-top: 40px;
+        color: white;
+        display: flex;
+        background: #cf231d;
+        justify-content: space-between;
+    }
+
+    .hero .hero-button p {
+        height: 50px;
+        width: 150px;
+        line-height: 50px;
+        margin: 0;
+    }
+
+    .hero .hero-button .icon-wrapper {
+        background: white;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .hero .hero-button .phone-icon {
+        color: #cf231d;
+        font-size: 20px;
+    }
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
