@@ -46,6 +46,7 @@ const state = {
 	closeIcon: null,
 	mobileNav: null,
 	form: null,
+	textArea: null,
 };
 const updateState = () => {
 	state.hamburgerButton = document.getElementById("hamburger");
@@ -61,6 +62,7 @@ const updateState = () => {
 	state.closeIcon = document.getElementById("close-icon");
 	state.mobileNav = document.getElementById("mobile-nav");
 	state.form = document.getElementById("form");
+	state.textArea = document.getElementById('notes');
 };
 const smoothScrollToAnchor = () => {
 	const links = document.querySelectorAll('a[href^="#"]');
@@ -151,10 +153,21 @@ window.addEventListener("DOMContentLoaded", async () => {
 			handleProjectToggle(2);
 		});
 	}
+	if (state.textArea) {
+		state.textArea.addEventListener('mouseenter', () => {
+			state.textArea.style.height = '100px';
+		});
+		state.textArea.addEventListener('mouseleave', () => {
+			if (state.textArea.value.length === 0) {
+				state.textArea.style.height = '40px';
+			}
+		});
+	}
 	if (state.form) {
 		state.form.addEventListener('submit', (e) => {
 			e.preventDefault();
-			alert('button clicked');
+			const formData = new FormData(state.form);
+			alert("You submitted: " + JSON.stringify(Array.from(formData)));
 		});
 	}
 });
