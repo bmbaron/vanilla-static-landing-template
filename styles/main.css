@@ -8,10 +8,12 @@
 /* ===== VARIABLES ===== */
 
 :root {
-    --primary-color: black;
-    --off-white: #f2f2f2;
+    --primary: black;
+    --secondary: red;
+    --light: #f2f2f2;
     --title-ff: 'Raleway';
     --text-ff: 'Inter';
+    --green: #058755;
 }
 
 /* ===== GLOBAL RESET ===== */
@@ -27,7 +29,7 @@ body, h1, h2, h3, p, a {
 body {
     font-family: var(--text-ff);
     scroll-behavior: smooth;
-    background: var(--off-white);
+    background: var(--light);
     /*overflow-x: hidden;*/
 }
 
@@ -43,7 +45,7 @@ section > h2:first-of-type {
     margin: auto;
     margin-bottom: 100px;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--primary);
     font-family: var(--title-ff);
     font-size: 38px;
 }
@@ -55,8 +57,8 @@ a:hover {
 .button {
     width: 160px;
     height: auto;
-    background: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background: var(--primary);
+    border: 2px solid var(--primary);
     color: white;
     margin: auto;
     padding-top: 10px;
@@ -65,7 +67,7 @@ a:hover {
 
 .button:hover {
     background: white;
-    color: var(--primary-color);
+    color: var(--primary);
     cursor: pointer;
     text-decoration: none !important;
 }

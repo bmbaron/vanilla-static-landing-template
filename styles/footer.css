@@ -1,6 +1,6 @@
 footer {
     height: 200px;
-    background: var(--primary-color);
+    background: var(--primary);
     color: white;
     overflow: hidden;
     padding-left: 40px;
